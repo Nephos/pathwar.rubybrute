@@ -9,6 +9,7 @@ module Brute
   ALNU = ALAL + ('0'..'9').to_a
   NUON = ('0'..'9').to_a
   GOAT = ['A', 'An', 'Goats', 'Having', 'The', 'a', 'able', 'and', 'animal', 'animals', 'are', 'be', 'cast', 'dead', 'death', 'defenses', 'distance', 'doesn', 'draw', 'each', 'eating', 'few', 'for', 'from', 'goat', 'goats', 'group', 'hasten', 'healthy', 'herd', 'herdmates', 'horns', 'injured', 'is', 'it', 'its', 'keep', 'leave', 'limited', 'long', 'many', 'means', 'members', 'must', 'not', 'of', 'or', 'other', 'out', 'potentially', 'predators', 'prey', 'protection', 'provide', 'quit', 'rest', 'runners', 'safety', 'save', 'separated', 'sick', 'so', 'species', 'sprinters', 't', 'the', 'their', 'they', 'to', 'up', 'while', 'will', 'with']
+  MEEE = [" ", "A", "B", "E", "H", "L", "M", "a", "b", "e", "h", "l", "m"]
 
   def self.next_pass str, syms
     return [syms[0]] if str.empty?
@@ -83,7 +84,7 @@ if __FILE__ == $0
   hash = ARGV[2].to_s
 
   puts "Bruteforce with #{min}..#{max}"
-  Brute.attack(min, max, Brute::GOAT) do |pass|
+  Brute.attack(min, max, Brute::MEEE) do |pass|
     if ARGV[0] == 'goat1'
       test_goat pass
     else
